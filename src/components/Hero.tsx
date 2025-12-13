@@ -1,4 +1,6 @@
 import { useState } from 'react';
+
+
 export default function Hero() {
   const [loading] = useState(false);
   const waitlistFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScDZyg4ZXbwFoyQ62WcXL6RonKNlVsjdCbesFV4BkjcIUMWSQ/viewform?usp=dialog';
