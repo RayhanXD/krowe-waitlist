@@ -1,6 +1,5 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
-import DemoSection from './components/DemoSection';
 
 function App() {
   return (
