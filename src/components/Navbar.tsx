@@ -26,7 +26,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="w-full py-4 fixed top-0 left-0 right-0 z-50 pointer-events-none">
+    <header className="w-full py-4 fixed top-0 left-0 right-0 z-50 pointer-events-none font-display">
       <nav className="mx-auto max-w-5xl px-4 w-full pointer-events-auto">
         <div className="bg-surface-light backdrop-blur-md bg-opacity-80 border border-gray-200 rounded-full px-6 py-3 shadow-soft flex items-center justify-between">
           <div className="flex items-center gap-2">
