@@ -8,8 +8,8 @@ export default function Footer() {
     // We'll duplicate the items in the ticker div to ensure smooth infinite loop.
 
     return (
-        <footer className="relative w-full bg-black border-t border-white/5 blueprint-grid pt-24 pb-8 overflow-hidden font-display antialiased">
-            <div className="absolute top-0 left-0 w-full glow-line"></div>
+        <footer className="relative w-full bg-black border-t border-white/5 blueprint-grid pt-24 pb-8 font-display antialiased">
+            <div className="absolute top-0 left-0 w-full glow-line z-10"></div>
             <div className="max-w-[1280px] mx-auto px-6 lg:px-12">
                 <div className="grid grid-cols-12 gap-12 items-center">
                     <div className="col-span-12 lg:col-span-8 flex flex-col justify-center">
@@ -18,8 +18,8 @@ export default function Footer() {
                                 <span className="text-white">Stop guessing.</span><br />
                                 <span className="text-primary">Start building.</span>
                             </h2>
-                            <p className="text-slate-500 text-lg font-medium mt-6 max-w-xl">
-                                The definitive operating system for modern founders. Move from ideation to launch with surgical precision.
+                            <p className="text-slate-500 text-lg font-medium mt-2 max-w-xl pt-4">
+                                The only platform you'll need to both plan and research your idea. So you can foucs on the fun stuff.
                             </p>
                         </div>
                     </div>
@@ -31,26 +31,17 @@ export default function Footer() {
                                     <span className="material-symbols-outlined text-primary text-3xl">bolt</span>
                                 </div>
                                 <h3 className="text-2xl font-bold mb-2 text-white">Ready to build?</h3>
-                                <p className="text-slate-400 text-sm leading-relaxed">Transform your technical depth into a market-ready product with our guided blueprint.</p>
+                                <p className="text-slate-400 text-sm leading-relaxed">Transform your idea into reality easily by using Krowe</p>
                             </div>
                             <div className="mt-auto space-y-4 relative z-10">
-                                <button className="w-full flex items-center justify-center gap-2 rounded-lg bg-primary h-12 px-6 text-black text-base font-bold transition-all hover:bg-orange-500 active:scale-[0.98]">
+                                <button className="w-full flex items-center justify-center gap-2 rounded-lg bg-primary h-12 px-6 text-white text-base font-bold transition-all hover:bg-orange-500 active:scale-[0.98]"
+                                type="button"
+                                onClick ={() => (window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLScDZyg4ZXbwFoyQ62WcXL6RonKNlVsjdCbesFV4BkjcIUMWSQ/viewform?usp=header")}
+                                >
                                     <span>Join the waitlist</span>
                                     <span className="material-symbols-outlined">arrow_forward</span>
                                 </button>
-                                <a className="w-full flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/5 h-12 px-6 text-slate-300 text-sm font-semibold hover:bg-white/10 transition-all" href="#">
-                                    View documentation
-                                </a>
-                                <div className="flex items-center justify-center gap-2 pt-4">
-                                    <div className="flex -space-x-2">
-                                        <div className="h-6 w-6 rounded-full border-2 border-background-dark bg-slate-700"></div>
-                                        <div className="h-6 w-6 rounded-full border-2 border-background-dark bg-slate-600"></div>
-                                        <div className="h-6 w-6 rounded-full border-2 border-background-dark bg-slate-500"></div>
-                                    </div>
-                                    <p className="text-[10px] uppercase tracking-widest font-bold text-slate-500">
-                                        <span className="text-primary">2,000+</span> Founders Joined
-                                    </p>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -127,11 +118,11 @@ export default function Footer() {
                         </div>
                         <div className="glass-panel px-6 py-3 rounded-xl flex items-center gap-4 min-w-[200px]">
                             <div className="h-8 w-8 rounded-lg bg-white/5 flex items-center justify-center"><span className="material-symbols-outlined text-primary text-xl">task_alt</span></div>
-                            <div><p className="text-[10px] uppercase text-slate-500 font-bold tracking-tighter">Open Tasks</p><p class="text-white font-bold text-sm">8 Pending</p></div>
+                            <div><p className="text-[10px] uppercase text-slate-500 font-bold tracking-tighter">Open Tasks</p><p className="text-white font-bold text-sm">8 Pending</p></div>
                         </div>
                         <div className="glass-panel px-6 py-3 rounded-xl flex items-center gap-4 min-w-[200px]">
                             <div className="h-2 w-2 rounded-full bg-primary animate-pulse"></div>
-                            <div><p className="text-[10px] uppercase text-slate-500 font-bold tracking-tighter">Environment</p><p className="text-white font-bold text-sm">Production</p></div>
+                            <div><p className="text-[10px] uppercase text-slate-500 font-bold tracking-tighter">Section</p><p className="text-white font-bold text-sm">Problem Research</p></div>
                         </div>
                         <div className="glass-panel px-6 py-3 rounded-xl flex items-center gap-4 min-w-[200px]">
                             <span className="material-symbols-outlined text-primary">analytics</span>
@@ -154,7 +145,7 @@ export default function Footer() {
                             <img src="KroweIcon.svg" width={35} height={3}></img>
                             <span className="font-bold text-lg text-white">Krowe</span>
                         </div>
-                        <p className="text-xs text-slate-500 font-medium">© 2024 Krowe Systems Inc.</p>
+                        <p className="text-xs text-slate-500 font-medium">© 2026 Krowe Technologies Inc.</p>
                     </div>
                     <div className="flex items-center gap-8">
                         <div className="flex items-center gap-6 text-sm font-medium text-slate-400">
@@ -166,7 +157,7 @@ export default function Footer() {
                             <a className="h-8 w-8 flex items-center justify-center rounded-lg bg-white/5 text-slate-400 hover:text-primary transition-colors" href="#">
                                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
                             </a>
-                            <a className="h-8 w-8 flex items-center justify-center rounded-lg bg-white/5 text-slate-400 hover:text-primary transition-colors" href="#">
+                            <a className="h-8 w-8 flex items-center justify-center rounded-lg bg-white/5 text-slate-400 hover:text-primary transition-colors" href="https://www.linkedin.com/company/krowe">
                                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
                             </a>
                         </div>
