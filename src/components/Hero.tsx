@@ -25,7 +25,7 @@ export function Hero() {
     { type: "tasks" as const, rotation: 2, x: 380, y: -31, blur: 1, z: 2 }, //done
     { type: "progress" as const, rotation: -2, x: -500, y: -250, blur: 3, z: 0 },
     { type: "section" as const, rotation: 3, x: 500, y: -250, blur: 2, z: 1 }, //done
-    { type: "feasibility" as const, rotation: 1, x: 0, y: 100, blur: 0, z: 3 },
+    { type: "feasibility" as const, rotation: 1, x: 0, y: 120, blur: 0, z: 3 },
     { type: "milestone" as const, rotation: -1, x: -500, y: 160, blur: 2, z: 1 }, //done
     { type: "competitor" as const, rotation: 2, x: 500, y: 160, blur: 2, z: 1 }, //done
   ]
@@ -80,7 +80,7 @@ export function Hero() {
           </Button>
         </div>
 
-        <p className="mt-8 text-sm text-muted-foregroun font-semibold">Built for first-time founders • No fluff • Action-first</p>
+        {/*<p className="mt-8 text-sm text-muted-foregroun font-semibold">Built for first-time founders • No fluff • Action-first</p>*/}
       </div>
 
       {/* Company Promo Section */}

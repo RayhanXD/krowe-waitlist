@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar';
 import { Hero } from './components/Hero';
-import Features from './components/Features';
-import Why from './components/Why';
+import Features from './components/How it works';
+import Benfits from './components/Benfits';
 import Timeline from './components/Timeline';
 import Footer from './components/footer';
 
@@ -16,7 +16,7 @@ function App() {
         <Features />
       </section>
       <section id="why-krowe">
-        <Why />
+        <Benfits />
       </section>
       <section id="how-it-works">
         <Timeline />
