@@ -8,13 +8,13 @@ export default function Footer() {
     // We'll duplicate the items in the ticker div to ensure smooth infinite loop.
 
     return (
-        <footer className="relative w-full bg-black border-t border-white/5 blueprint-grid pt-24 pb-8 font-display antialiased">
+        <footer className="relative w-full bg-black border-t border-white/5 blueprint-grid pt-24 pb-8 antialiased">
             <div className="absolute top-0 left-0 w-full glow-line z-10"></div>
             <div className="max-w-[1280px] mx-auto px-6 lg:px-12">
                 <div className="grid grid-cols-12 gap-12 items-center">
                     <div className="col-span-12 lg:col-span-8 flex flex-col justify-center">
                         <div className="space-y-2">
-                            <h2 className="text-6xl lg:text-8xl font-bold tracking-tighter leading-none">
+                            <h2 className="text-6xl lg:text-8xl font-bold tracking-tighter leading-none font-serif">
                                 <span className="text-white">Stop guessing.</span><br />
                                 <span className="text-primary">Start building.</span>
                             </h2>
@@ -30,7 +30,7 @@ export default function Footer() {
                                 <div className="h-12 w-12 rounded-xl bg-primary/20 flex items-center justify-center mb-6 border border-primary/30">
                                     <span className="material-symbols-outlined text-primary text-3xl">bolt</span>
                                 </div>
-                                <h3 className="text-2xl font-bold mb-2 text-white">Ready to build?</h3>
+                                <h3 className="text-2xl font-bold mb-2 text-white font-serif">Ready to build?</h3>
                                 <p className="text-slate-400 text-sm leading-relaxed">Transform your idea into reality easily by using Krowe</p>
                             </div>
                             <div className="mt-auto space-y-4 relative z-10">
@@ -143,7 +143,7 @@ export default function Footer() {
                     <div className="flex items-center gap-6">
                         <div className="flex items-center gap-2">
                             <img src="KroweIcon.svg" width={35} height={3}></img>
-                            <span className="font-bold text-lg text-white">Krowe</span>
+                            <span className="font-bold text-lg text-white font-display">Krowe</span>
                         </div>
                         <p className="text-xs text-slate-500 font-medium">© 2026 Krowe Technologies Inc.</p>
                     </div>
@@ -154,7 +154,7 @@ export default function Footer() {
                             <a className="hover:text-primary transition-colors" href="#">Contact</a>
                         </div>
                         <div className="flex items-center gap-4">
-                            <a className="h-8 w-8 flex items-center justify-center rounded-lg bg-white/5 text-slate-400 hover:text-primary transition-colors" href="#">
+                            <a className="h-8 w-8 flex items-center justify-center rounded-lg bg-white/5 text-slate-400 hover:text-primary transition-colors" href="https://x.com/KroweInc">
                                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
                             </a>
                             <a className="h-8 w-8 flex items-center justify-center rounded-lg bg-white/5 text-slate-400 hover:text-primary transition-colors" href="https://www.linkedin.com/company/krowe">

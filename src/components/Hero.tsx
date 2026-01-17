@@ -25,7 +25,7 @@ export function Hero() {
     { type: "tasks" as const, rotation: 2, x: 380, y: -31, blur: 1, z: 2 }, //done
     { type: "progress" as const, rotation: -2, x: -500, y: -250, blur: 3, z: 0 },
     { type: "section" as const, rotation: 3, x: 500, y: -250, blur: 2, z: 1 }, //done
-    { type: "feasibility" as const, rotation: 1, x: 0, y: 120, blur: 0, z: 3 },
+    // { type: "feasibility" as const, rotation: 1, x: 0, y: 120, blur: 0, z: 3 },
     { type: "milestone" as const, rotation: -1, x: -500, y: 160, blur: 2, z: 1 }, //done
     { type: "competitor" as const, rotation: 2, x: 500, y: 160, blur: 2, z: 1 }, //done
   ]
@@ -34,8 +34,8 @@ export function Hero() {
     <section className="relative min-h-screen pt-32 pb-20 overflow-hidden">
       {/* Stacked cards behind headline */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        {cards.map((card, i) => (
-          <div
+          {cards.map((card, i) => (
+            <div
             key={i}
             className="absolute transition-transform duration-700 ease-out"
             style={{
@@ -75,6 +75,10 @@ export function Hero() {
             variant="outline"
             size="lg"
             className="rounded-full px-8 py-6 text-base font-medium border-border hover:bg-secondary bg-white font-bold"
+            onClick={() => {
+              const element = document.getElementById("benefits")
+              element?.scrollIntoView({ behavior: "smooth" })
+            }}
           >
             See how it works
           </Button>

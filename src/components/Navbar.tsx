@@ -1,7 +1,7 @@
 import { MouseEvent } from 'react';
 
 const NAV_LINKS = [
-  { label: "Home", href: "#home" },
+ // { label: "Home", href: "#home" },
   { label: "How it Works", href: "#features" },
   { label: "Benefits", href: "#benefits" },
   { label: "FAQ", href: "#faq" },
@@ -51,14 +51,17 @@ export default function Navbar() {
               </a>
             ))}
           </div>
-          <div className="flex items-center gap-4">
+          <button className="flex items-center gap-4"
+          type="button"
+          onClick={() => (window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLScDZyg4ZXbwFoyQ62WcXL6RonKNlVsjdCbesFV4BkjcIUMWSQ/viewform?usp=header")}
+          >
             <a
               href="#"
               className="bg-text-light text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity cursor-pointer"
             >
               Join Waitlist
             </a>
-          </div>
+          </button>
         </div>
       </nav>
     </header>

@@ -131,10 +131,10 @@ export function KroweHelpdeskFAQ() {
                 {/* Header */}
                 <div className="mb-8 flex flex-col gap-4 md:mb-10 md:flex-row md:items-end md:justify-between">
                     <div>
-                        <h2 className="text-3xl font-bold tracking-tight text-neutral-900 md:text-4xl">
+                        <h2 className="text-3xl font-bold tracking-tight text-neutral-900 md:text-4xl font-serif">
                             FAQ, but built like a helpdesk.
                         </h2>
-                        <p className="mt-2 text-base text-neutral-500 md:text-lg">
+                        <p className="mt-2 text-base text-neutral-500 md:text-lg font-serif">
                             Open a ticket — get clarity fast.
                         </p>
                     </div>
@@ -258,7 +258,7 @@ const TicketRow = forwardRef<HTMLButtonElement, TicketRowProps>(({ ticket, isAct
             {/* Active left accent bar */}
             {isActive && <span className="absolute left-0 top-0 h-full w-[3px] bg-orange-500" />}
             <div className="flex items-start justify-between gap-2">
-                <h3 className="text-sm font-medium leading-snug text-neutral-800">{ticket.question}</h3>
+                <h3 className="text-sm font-medium leading-snug text-neutral-800 font-serif">{ticket.question}</h3>
                 <ChevronRight
                     className={`mt-0.5 h-4 w-4 flex-shrink-0 text-neutral-400 transition-transform ${isActive ? "translate-x-0.5 text-orange-500" : ""
                         }`}
@@ -304,7 +304,7 @@ function TicketDetail({ ticket, allTickets, onRelatedClick, isMobile }: TicketDe
             </div>
 
             {/* Question title */}
-            <h3 className="text-xl font-semibold leading-snug text-neutral-900 md:text-2xl">{ticket.question}</h3>
+            <h3 className="text-xl font-semibold leading-snug text-neutral-900 md:text-2xl font-serif">{ticket.question}</h3>
 
             {/* Answer */}
             <p className="text-base leading-relaxed text-neutral-600">{ticket.answer}</p>
