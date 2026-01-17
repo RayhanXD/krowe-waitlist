@@ -1,10 +1,10 @@
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import Why from './components/Why';
-import Timeline from './components/Timeline';
-import Footer from './components/footer';
+import { Hero } from './components/Hero';
+import Features from './components/How it works';
+import Benfits from './components/Benfits';
 
+import Footer from './components/footer';
+import KroweHelpdeskFAQ from './components/faq';
 function App() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
@@ -16,10 +16,10 @@ function App() {
         <Features />
       </section>
       <section id="why-krowe">
-        <Why />
+        <Benfits />
       </section>
-      <section id="how-it-works">
-        <Timeline />
+      <section id="faq">
+        <KroweHelpdeskFAQ/>
       </section>
       <Footer />
     </div>

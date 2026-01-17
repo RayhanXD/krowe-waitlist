@@ -1,10 +1,10 @@
 import { MouseEvent } from 'react';
 
 const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "Features", href: "#features" },
-  { label: "How it Works", href: "#how-it-works" },
-  { label: "Why Krowe?", href: "#why-krowe" },
+ // { label: "Home", href: "#home" },
+  { label: "How it Works", href: "#features" },
+  { label: "Benefits", href: "#benefits" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export default function Navbar() {
@@ -14,7 +14,12 @@ export default function Navbar() {
     const element = document.getElementById(targetId);
     if (element) {
       // Adjust this value to change the scroll offset
-      const offset = 100;
+      let offset = 100;
+
+      // Custom offset specifically for Benefits
+      if (targetId === 'benefits') {
+        offset = 20;
+      }
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.scrollY - offset;
 
@@ -46,20 +51,17 @@ export default function Navbar() {
               </a>
             ))}
           </div>
-          <div className="flex items-center gap-4">
-            <a
-              href="#"
-              className="hidden md:block text-sm font-semibold hover:text-primary transition-colors text-text-light cursor-pointer"
-            >
-              Sign in
-            </a>
+          <button className="flex items-center gap-4"
+          type="button"
+          onClick={() => (window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLScDZyg4ZXbwFoyQ62WcXL6RonKNlVsjdCbesFV4BkjcIUMWSQ/viewform?usp=header")}
+          >
             <a
               href="#"
               className="bg-text-light text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity cursor-pointer"
             >
-              Get Started
+              Join Waitlist
             </a>
-          </div>
+          </button>
         </div>
       </nav>
     </header>

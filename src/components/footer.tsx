@@ -1,51 +1,169 @@
+import { useEffect, useRef } from 'react';
+
 export default function Footer() {
+    const scrollRef = useRef<HTMLDivElement>(null);
+
+    // Duplicate content for infinite scroll effect if needed, 
+    // or rely on CSS animation. The CSS uses logic that assumes content is wide enough.
+    // We'll duplicate the items in the ticker div to ensure smooth infinite loop.
+
     return (
-        <>
-            <section className="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
-                <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2 items-center">
-                        <div className="max-w-xl lg:max-w-lg">
-                            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Ready to build your business?</h2>
-                            <p className="mt-4 text-lg leading-8 text-gray-300">Join the waitlist today and get early access to the OS that helps you ship faster.</p>
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScDZyg4ZXbwFoyQ62WcXL6RonKNlVsjdCbesFV4BkjcIUMWSQ/viewform?usp=header" target="_blank" rel="noopener noreferrer" className="mt-6 inline-block rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Join the waitlist</a>
+        <footer className="relative w-full bg-black border-t border-white/5 blueprint-grid pt-24 pb-8 antialiased">
+            <div className="absolute top-0 left-0 w-full glow-line z-10"></div>
+            <div className="max-w-[1280px] mx-auto px-6 lg:px-12">
+                <div className="grid grid-cols-12 gap-12 items-center">
+                    <div className="col-span-12 lg:col-span-8 flex flex-col justify-center">
+                        <div className="space-y-2">
+                            <h2 className="text-6xl lg:text-8xl font-bold tracking-tighter leading-none font-serif">
+                                <span className="text-white">Stop guessing.</span><br />
+                                <span className="text-primary">Start building.</span>
+                            </h2>
+                            <p className="text-slate-500 text-lg font-medium mt-2 max-w-xl pt-4">
+                                The only platform you'll need to both plan and research your idea. So you can foucs on the fun stuff.
+                            </p>
                         </div>
-                        <div className="flex justify-center lg:justify-end">
-                            <div className="relative h-64 w-64 md:h-80 md:w-80 rounded-full bg-gradient-to-tr from-primary to-orange-400 opacity-20 blur-3xl"></div>
-                            <div className="absolute right-10 top-10 md:right-20 md:top-20">
-                                <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8 border border-white/10 max-w-xs transform rotate-3">
-                                    <p className="text-white text-lg font-medium">"Krowe saved me months of admin work."</p>
-                                    <div className="mt-4 flex items-center gap-3">
-                                        <div className="h-10 w-10 rounded-full bg-gray-400" data-alt="Portrait of a smiling female founder" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBcDNAgAJKhXCuWVMot1B1ISIIQ6I1j1Appk6u9eR_ScCe7fyf1gzCfB5dNfGWJ15t5YXV0FDzGOaI_8kVLwegBnPDcgkK_CVOGfiuj8yPFGxABrW_a4n-kJR-RgbNQcSm0D6tKAFZhVg9-uoOfdy-OPf6nA5_JC45lR9REImHjC-e-jzT1vFMyiqPkyAcopUkswtiHZVnrBsd8i_TG8SebH0yRAedM6rDhKDLo51aNAiZUonnhZksPdnuCGKiPwdiZBSU3SOeANi37')", backgroundSize: "cover" }}></div>
-                                        <div className="text-sm">
-                                            <p className="text-white font-bold">Sarah Jenkins</p>
-                                            <p className="text-gray-400">Founder, SaaSy</p>
-                                        </div>
-                                    </div>
+                    </div>
+                    <div className="col-span-12 lg:col-span-4">
+                        <div className="glass-panel p-8 rounded-2xl flex flex-col relative overflow-hidden group">
+                            <div className="absolute -top-12 -right-12 w-32 h-32 bg-primary/10 blur-3xl rounded-full"></div>
+                            <div className="mb-8 relative z-10">
+                                <div className="h-12 w-12 rounded-xl bg-primary/20 flex items-center justify-center mb-6 border border-primary/30">
+                                    <span className="material-symbols-outlined text-primary text-3xl">bolt</span>
                                 </div>
+                                <h3 className="text-2xl font-bold mb-2 text-white font-serif">Ready to build?</h3>
+                                <p className="text-slate-400 text-sm leading-relaxed">Transform your idea into reality easily by using Krowe</p>
+                            </div>
+                            <div className="mt-auto space-y-4 relative z-10">
+                                <button className="w-full flex items-center justify-center gap-2 rounded-lg bg-primary h-12 px-6 text-white text-base font-bold transition-all hover:bg-orange-500 active:scale-[0.98]"
+                                type="button"
+                                onClick ={() => (window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLScDZyg4ZXbwFoyQ62WcXL6RonKNlVsjdCbesFV4BkjcIUMWSQ/viewform?usp=header")}
+                                >
+                                    <span>Join the waitlist</span>
+                                    <span className="material-symbols-outlined">arrow_forward</span>
+                                </button>
+
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            <footer className="bg-white border-t border-gray-100">
-                <div className="mx-auto max-w-7xl overflow-hidden px-6 py-12 lg:px-8">
-                    <div className="flex justify-center space-x-10">
-                        <a className="text-gray-400 hover:text-gray-500" href="#">
-                            <span className="sr-only">Twitter</span>
-                            <svg aria-hidden="true" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
-                            </svg>
-                        </a>
-                        <a className="text-gray-400 hover:text-gray-500" href="#">
-                            <span className="sr-only">GitHub</span>
-                            <svg aria-hidden="true" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fillRule="evenodd"></path>
-                            </svg>
-                        </a>
+            </div>
+
+            <div className="mt-20 relative w-full overflow-hidden mask-fade">
+                <div className="ticker-animate flex gap-6 px-6 w-max">
+                    {/* First Set */}
+                    <div className="flex gap-6">
+                        <div className="glass-panel px-6 py-3 rounded-xl flex items-center gap-4 min-w-[200px]">
+                            <div className="h-8 w-8 rounded-lg bg-orange-500/20 flex items-center justify-center">
+                                <span className="material-symbols-outlined text-primary text-xl">local_fire_department</span>
+                            </div>
+                            <div>
+                                <p className="text-[10px] uppercase text-slate-500 font-bold tracking-tighter">Current Streak</p>
+                                <p className="text-white font-bold text-sm">12 Days</p>
+                            </div>
+                        </div>
+                        <div className="glass-panel px-6 py-3 rounded-xl flex items-center gap-4 min-w-[200px]">
+                            <div className="h-8 w-8 rounded-lg bg-white/5 flex items-center justify-center">
+                                <span className="material-symbols-outlined text-primary text-xl">donut_large</span>
+                            </div>
+                            <div className="flex-1">
+                                <p className="text-[10px] uppercase text-slate-500 font-bold tracking-tighter">MVP Progress</p>
+                                <div className="h-1.5 w-24 bg-white/10 rounded-full mt-1">
+                                    <div className="h-full w-3/4 bg-primary rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="glass-panel px-6 py-3 rounded-xl flex items-center gap-4 min-w-[200px]">
+                            <div className="h-8 w-8 rounded-lg bg-white/5 flex items-center justify-center">
+                                <span className="material-symbols-outlined text-primary text-xl">task_alt</span>
+                            </div>
+                            <div>
+                                <p className="text-[10px] uppercase text-slate-500 font-bold tracking-tighter">Open Tasks</p>
+                                <p className="text-white font-bold text-sm">8 Pending</p>
+                            </div>
+                        </div>
+                        <div className="glass-panel px-6 py-3 rounded-xl flex items-center gap-4 min-w-[200px]">
+                            <div className="h-2 w-2 rounded-full bg-primary animate-pulse"></div>
+                            <div>
+                                <p className="text-[10px] uppercase text-slate-500 font-bold tracking-tighter">Environment</p>
+                                <p className="text-white font-bold text-sm">Production</p>
+                            </div>
+                        </div>
+                        <div className="glass-panel px-6 py-3 rounded-xl flex items-center gap-4 min-w-[200px]">
+                            <span className="material-symbols-outlined text-primary">analytics</span>
+                            <div>
+                                <p className="text-[10px] uppercase text-slate-500 font-bold tracking-tighter">Engagement</p>
+                                <p className="text-white font-bold text-sm">+24% WoW</p>
+                            </div>
+                        </div>
+                        <div className="glass-panel px-6 py-3 rounded-xl flex items-center gap-4 min-w-[200px]">
+                            <span className="material-symbols-outlined text-primary">hub</span>
+                            <div>
+                                <p className="text-[10px] uppercase text-slate-500 font-bold tracking-tighter">Active Nodes</p>
+                                <p className="text-white font-bold text-sm">147 Active</p>
+                            </div>
+                        </div>
                     </div>
-                    <p className="mt-10 text-center text-xs leading-5 text-gray-500">© 2026 Krowe Inc. All rights reserved.</p>
+
+                    {/* Second Set (Duplicate) */}
+                    <div className="flex gap-6">
+                        <div className="glass-panel px-6 py-3 rounded-xl flex items-center gap-4 min-w-[200px]">
+                            <div className="h-8 w-8 rounded-lg bg-orange-500/20 flex items-center justify-center">
+                                <span className="material-symbols-outlined text-primary text-xl">local_fire_department</span>
+                            </div>
+                            <div><p className="text-[10px] uppercase text-slate-500 font-bold tracking-tighter">Current Streak</p><p className="text-white font-bold text-sm">12 Days</p></div>
+                        </div>
+                        <div className="glass-panel px-6 py-3 rounded-xl flex items-center gap-4 min-w-[200px]">
+                            <div className="h-8 w-8 rounded-lg bg-white/5 flex items-center justify-center"><span className="material-symbols-outlined text-primary text-xl">donut_large</span></div>
+                            <div className="flex-1"><p className="text-[10px] uppercase text-slate-500 font-bold tracking-tighter">MVP Progress</p><div className="h-1.5 w-24 bg-white/10 rounded-full mt-1"><div className="h-full w-3/4 bg-primary rounded-full"></div></div></div>
+                        </div>
+                        <div className="glass-panel px-6 py-3 rounded-xl flex items-center gap-4 min-w-[200px]">
+                            <div className="h-8 w-8 rounded-lg bg-white/5 flex items-center justify-center"><span className="material-symbols-outlined text-primary text-xl">task_alt</span></div>
+                            <div><p className="text-[10px] uppercase text-slate-500 font-bold tracking-tighter">Open Tasks</p><p className="text-white font-bold text-sm">8 Pending</p></div>
+                        </div>
+                        <div className="glass-panel px-6 py-3 rounded-xl flex items-center gap-4 min-w-[200px]">
+                            <div className="h-2 w-2 rounded-full bg-primary animate-pulse"></div>
+                            <div><p className="text-[10px] uppercase text-slate-500 font-bold tracking-tighter">Section</p><p className="text-white font-bold text-sm">Problem Research</p></div>
+                        </div>
+                        <div className="glass-panel px-6 py-3 rounded-xl flex items-center gap-4 min-w-[200px]">
+                            <span className="material-symbols-outlined text-primary">analytics</span>
+                            <div><p className="text-[10px] uppercase text-slate-500 font-bold tracking-tighter">Engagement</p><p className="text-white font-bold text-sm">+24% WoW</p></div>
+                        </div>
+                        <div className="glass-panel px-6 py-3 rounded-xl flex items-center gap-4 min-w-[200px]">
+                            <span className="material-symbols-outlined text-primary">hub</span>
+                            <div><p className="text-[10px] uppercase text-slate-500 font-bold tracking-tighter">Active Nodes</p><p className="text-white font-bold text-sm">147 Active</p></div>
+                        </div>
+                    </div>
+
+                    {/* Third Set (Duplicate for smoothness on wide screens if needed, just 2 is probably enough if width is 50% relative to container, but let's stick to 2 for now as per user request code) -- Actually user code had 2 sets, I will keep 2. */}
                 </div>
-            </footer>
-        </>
-    )
+            </div>
+
+            <div className="max-w-[1280px] mx-auto px-6 lg:px-12 mt-20">
+                <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div className="flex items-center gap-6">
+                        <div className="flex items-center gap-2">
+                            <img src="KroweIcon.svg" width={35} height={3}></img>
+                            <span className="font-bold text-lg text-white font-display">Krowe</span>
+                        </div>
+                        <p className="text-xs text-slate-500 font-medium">© 2026 Krowe Technologies Inc.</p>
+                    </div>
+                    <div className="flex items-center gap-8">
+                        <div className="flex items-center gap-6 text-sm font-medium text-slate-400">
+                            <a className="hover:text-primary transition-colors" href="#">Privacy</a>
+                            <a className="hover:text-primary transition-colors" href="#">Terms</a>
+                            <a className="hover:text-primary transition-colors" href="#">Contact</a>
+                        </div>
+                        <div className="flex items-center gap-4">
+                            <a className="h-8 w-8 flex items-center justify-center rounded-lg bg-white/5 text-slate-400 hover:text-primary transition-colors" href="https://x.com/KroweInc">
+                                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                            </a>
+                            <a className="h-8 w-8 flex items-center justify-center rounded-lg bg-white/5 text-slate-400 hover:text-primary transition-colors" href="https://www.linkedin.com/company/krowe">
+                                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    );
 }
