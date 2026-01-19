@@ -7,7 +7,7 @@ import Footer from './components/footer';
 import KroweHelpdeskFAQ from './components/faq';
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white overflow-x-hidden w-full">
       <Navbar />
       <section id="home">
         <Hero />
@@ -19,7 +19,7 @@ function App() {
         <Benfits />
       </section>
       <section id="faq">
-        <KroweHelpdeskFAQ/>
+        <KroweHelpdeskFAQ />
       </section>
       <Footer />
     </div>
