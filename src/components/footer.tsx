@@ -8,13 +8,13 @@ export default function Footer() {
     // We'll duplicate the items in the ticker div to ensure smooth infinite loop.
 
     return (
-        <footer className="relative w-full bg-black border-t border-white/5 blueprint-grid pt-24 pb-8 antialiased">
+        <footer className="relative w-full bg-black border-t border-white/5 blueprint-grid pt-24 pb-8 antialiased overflow-hidden">
             <div className="absolute top-0 left-0 w-full glow-line z-10"></div>
             <div className="max-w-[1280px] mx-auto px-6 lg:px-12">
-                <div className="grid grid-cols-12 gap-12 items-center">
+                <div className="grid grid-cols-12 gap-8 lg:gap-12 items-center">
                     <div className="col-span-12 lg:col-span-8 flex flex-col justify-center">
                         <div className="space-y-2">
-                            <h2 className="text-6xl lg:text-8xl font-bold tracking-tighter leading-none font-serif">
+                            <h2 className="text-4xl lg:text-8xl font-bold tracking-tighter leading-none font-serif">
                                 <span className="text-white">Stop guessing.</span><br />
                                 <span className="text-primary">Start building.</span>
                             </h2>
@@ -24,7 +24,7 @@ export default function Footer() {
                         </div>
                     </div>
                     <div className="col-span-12 lg:col-span-4">
-                        <div className="glass-panel p-8 rounded-2xl flex flex-col relative overflow-hidden group">
+                        <div className="glass-panel rounded-2xl flex flex-col relative overflow-hidden group w-full p-6 lg:p-8">
                             <div className="absolute -top-12 -right-12 w-32 h-32 bg-primary/10 blur-3xl rounded-full"></div>
                             <div className="mb-8 relative z-10">
                                 <div className="h-12 w-12 rounded-xl bg-primary/20 flex items-center justify-center mb-6 border border-primary/30">
@@ -35,8 +35,8 @@ export default function Footer() {
                             </div>
                             <div className="mt-auto space-y-4 relative z-10">
                                 <button className="w-full flex items-center justify-center gap-2 rounded-lg bg-primary h-12 px-6 text-white text-base font-bold transition-all hover:bg-orange-500 active:scale-[0.98]"
-                                type="button"
-                                onClick ={() => (window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLScDZyg4ZXbwFoyQ62WcXL6RonKNlVsjdCbesFV4BkjcIUMWSQ/viewform?usp=header")}
+                                    type="button"
+                                    onClick={() => (window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLScDZyg4ZXbwFoyQ62WcXL6RonKNlVsjdCbesFV4BkjcIUMWSQ/viewform?usp=header")}
                                 >
                                     <span>Join the waitlist</span>
                                     <span className="material-symbols-outlined">arrow_forward</span>
