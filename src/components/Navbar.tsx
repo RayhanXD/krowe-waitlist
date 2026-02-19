@@ -7,7 +7,11 @@ const NAV_LINKS = [
   { label: "FAQ", href: "#faq" },
 ];
 
-export default function Navbar() {
+interface NavbarProps {
+  onJoinWaitlist?: () => void
+}
+
+export default function Navbar({ onJoinWaitlist }: NavbarProps) {
   const handleScroll = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const targetId = href.replace('#', '');
@@ -51,9 +55,10 @@ export default function Navbar() {
               </a>
             ))}
           </div>
-          <button className="flex items-center gap-4"
-          type="button"
-          onClick={() => (window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLScDZyg4ZXbwFoyQ62WcXL6RonKNlVsjdCbesFV4BkjcIUMWSQ/viewform?usp=header")}
+          <button
+            className="flex items-center gap-4"
+            type="button"
+            onClick={() => onJoinWaitlist?.()}
           >
             <a
               href="#"

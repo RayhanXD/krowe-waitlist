@@ -1,8 +1,8 @@
-import { useEffect, useRef } from 'react';
+interface FooterProps {
+  onJoinWaitlist?: () => void
+}
 
-export default function Footer() {
-    const scrollRef = useRef<HTMLDivElement>(null);
-
+export default function Footer({ onJoinWaitlist }: FooterProps) {
     // Duplicate content for infinite scroll effect if needed, 
     // or rely on CSS animation. The CSS uses logic that assumes content is wide enough.
     // We'll duplicate the items in the ticker div to ensure smooth infinite loop.
@@ -34,9 +34,10 @@ export default function Footer() {
                                 <p className="text-slate-400 text-sm leading-relaxed">Transform your idea into reality easily by using Krowe</p>
                             </div>
                             <div className="mt-auto space-y-4 relative z-10">
-                                <button className="w-full flex items-center justify-center gap-2 rounded-lg bg-primary h-12 px-6 text-white text-base font-bold transition-all hover:bg-orange-500 active:scale-[0.98]"
+                                <button
+                                    className="w-full flex items-center justify-center gap-2 rounded-lg bg-primary h-12 px-6 text-white text-base font-bold transition-all hover:bg-orange-500 active:scale-[0.98]"
                                     type="button"
-                                    onClick={() => (window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLScDZyg4ZXbwFoyQ62WcXL6RonKNlVsjdCbesFV4BkjcIUMWSQ/viewform?usp=header")}
+                                    onClick={() => onJoinWaitlist?.()}
                                 >
                                     <span>Join the waitlist</span>
                                     <span className="material-symbols-outlined">arrow_forward</span>

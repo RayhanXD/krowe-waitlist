@@ -123,7 +123,11 @@ const inputChips = [
     { label: "Customer", value: "Students" },
 ]
 
-export default function DecisionConsoleBenefits() {
+interface DecisionConsoleBenefitsProps {
+  onJoinWaitlist?: () => void
+}
+
+export default function DecisionConsoleBenefits({ onJoinWaitlist }: DecisionConsoleBenefitsProps) {
     const [activeTab, setActiveTab] = useState<TabType>("Direction")
     const [directionChoice, setDirectionChoice] = useState<"build" | "niche" | "pivot">("build")
     const [isTransitioning, setIsTransitioning] = useState(false)
@@ -435,9 +439,10 @@ export default function DecisionConsoleBenefits() {
                     <div className="px-6 md:px-8 py-5 border-t border-border bg-muted/20">
                         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                             <div className="flex items-center gap-4">
-                                <button className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 font-serif"
+                                <button
+                                className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 font-serif"
                                 type="button"
-                                onClick={() => (window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLScDZyg4ZXbwFoyQ62WcXL6RonKNlVsjdCbesFV4BkjcIUMWSQ/viewform?usp=header")}
+                                onClick={() => onJoinWaitlist?.()}
                                 >
                                     Get my direction
                                 </button>
