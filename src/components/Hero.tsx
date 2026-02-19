@@ -4,7 +4,11 @@ import { Button } from "./ui/button"
 import { DashboardCard } from "./dashboard-card"
 import { useEffect, useState } from "react"
 
-export function Hero() {
+interface HeroProps {
+  onJoinWaitlist?: () => void
+}
+
+export function Hero({ onJoinWaitlist }: HeroProps) {
   const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
@@ -64,8 +68,8 @@ export function Hero() {
 
         <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
           <Button
-            type = "button"
-            onClick = {() => (window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLScDZyg4ZXbwFoyQ62WcXL6RonKNlVsjdCbesFV4BkjcIUMWSQ/viewform?usp=header")}
+            type="button"
+            onClick={() => onJoinWaitlist?.()}
             size="lg"
             className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 py-6 text-base font-medium text-white font-bold"
           >
